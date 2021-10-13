@@ -16,7 +16,7 @@ protocol APIBuilder {
 }
 
 enum LittleAPI {
-    case getWeather
+    case getWeather(long: String, lat: String)
     case news
 }
 
@@ -33,14 +33,30 @@ extension LittleAPI: APIBuilder {
     var path: String {
         switch self {
         case .getWeather :
-            return "/weather?latitude=40.709335&longitude=-73.956558" // "/weather?latitude=\(double here)&longitude=\(double here)"
+            return "/weather" // "/weather?latitude=\(double here)&longitude=\(double here)"
         case .news:
             return "/news"
         }
     }
     
     var urlRequest: URLRequest {
-        return URLRequest(url: self.baseURL.appendingPathComponent(self.path))
+        switch self {
+        case .getWeather(let long, let lat):
+            let queryItems = [
+                URLQueryItem(name: "latitude", value: lat),
+                URLQueryItem(name: "longitude", value: long)
+            ]
+
+            var urlComps = URLComponents(url: self.baseURL.appendingPathComponent(self.path),
+                                         resolvingAgainstBaseURL: true)!
+            
+            urlComps.queryItems = queryItems
+
+            return URLRequest(url: urlComps.url!)
+
+        case .news:
+            return URLRequest(url: self.baseURL.appendingPathComponent(self.path))
+        }
     }
     
     

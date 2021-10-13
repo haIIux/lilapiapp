@@ -8,8 +8,6 @@
 import Foundation
 import Combine
 
-#error("Issue with the connection, when running - immediately throws the error view.")
-
 protocol WeatherService {
     func request(from endpoint: LittleAPI) -> AnyPublisher<WeatherResponse, APIError>
 }
