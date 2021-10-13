@@ -20,7 +20,30 @@ struct ErrorView: View {
     
     var body: some View {
         VStack {
-            Text("Error :(")
+            Image(systemName: "exclamationmark.icloud.fill")
+                .foregroundColor(.gray)
+                .font(.system(size: 50, weight: .heavy))
+                .padding(.bottom, 4)
+            Text("Awe Snap!")
+                .foregroundColor(.black)
+                .font(.system(size: 24, weight: .heavy))
+            Text(error.localizedDescription)
+                .foregroundColor(.gray)
+                .font(.system(size: 15))
+                .multilineTextAlignment(.center)
+                .padding(.vertical, 4)
+            Button {
+                handler()
+            } label: {
+                Text("Retry!")
+                    .foregroundColor(.white)
+                    .font(.system(size: 15, weight: .bold))
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 30)
+            .background(Color(.systemBlue))
+            .cornerRadius(10)
+
         }
     }
 }
