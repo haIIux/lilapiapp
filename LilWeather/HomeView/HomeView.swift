@@ -10,30 +10,17 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var weatherViewModel = WeatherModelImplementation(service: WeatherServiceImplementation())
     var body: some View {
-        VStack {
-            Text("Lil News & Weather")
-                .bold()
-                .font(.title)
+        ZStack {
+            Color("BackgroundColor").ignoresSafeArea()
             VStack {
-                Text("Forecast")
-                Group {
-                    switch weatherViewModel.state {
-                    case .loading:
-                        ProgressView()
-                    case .success(content: let content):
-                        ScrollView(.horizontal) {
-                            ForEach(content) { item in
-                                WeatherView(forecast: item)
-                            }
-                        }
-                    case .failed(error: let error):
-                        ErrorView(error: error, handler: weatherViewModel.getWeather)
-                    }
-                }
+                Text("Lil News & Weather")
+                    .bold()
+                    .font(.title)
+                weather
             }
-        }
-        .onAppear {
-            weatherViewModel.getWeather()
+            .onAppear {
+                weatherViewModel.getWeather()
+            }
         }
     }
 }
@@ -45,3 +32,30 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
+extension HomeView {
+    var weather: some View {
+        VStack(alignment: .leading) {
+            Text("Forecast")
+                .bold()
+                .font(.title2)
+                .padding(.horizontal)
+            Group {
+                switch weatherViewModel.state {
+                case .loading:
+                    ProgressView()
+                case .success(content: let content):
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(content) { item in
+                                WeatherView(forecast: item)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                case .failed(error: let error):
+                    ErrorView(error: error, handler: weatherViewModel.getWeather)
+                }
+            }
+        }
+    }
+}

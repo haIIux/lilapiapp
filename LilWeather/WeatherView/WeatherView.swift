@@ -33,12 +33,6 @@ struct WeatherView_Previews: PreviewProvider {
     }
 }
 
-/*
- ScrollView(.horizontal) {
-     ForEach(content) { item in
-         WeatherView(forecast: item)
-     }
- }
- */
+
 
 

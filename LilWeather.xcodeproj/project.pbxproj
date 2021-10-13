@@ -21,6 +21,7 @@
 		B2BC643E27165BC400614783 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC643D27165BC400614783 /* WeatherService.swift */; };
 		B2BC64422716608B00614783 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC64412716608B00614783 /* WeatherView.swift */; };
 		B2BC64442716634000614783 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC64432716634000614783 /* ErrorView.swift */; };
+		B2EC3F5E2717767D00A43B77 /* ForecastImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC3F5D2717767D00A43B77 /* ForecastImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B2BC643D27165BC400614783 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		B2BC64412716608B00614783 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		B2BC64432716634000614783 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		B2EC3F5D2717767D00A43B77 /* ForecastImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				B2BC64352716598200614783 /* WeatherVM.swift */,
 				B2BC64372716598900614783 /* NewsVM.swift */,
+				B2EC3F5D2717767D00A43B77 /* ForecastImages.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				B2BC64332716581C00614783 /* HomeView.swift in Sources */,
 				B2BC643B271659D600614783 /* WeatherModel.swift in Sources */,
 				B2BC64442716634000614783 /* ErrorView.swift in Sources */,
+				B2EC3F5E2717767D00A43B77 /* ForecastImages.swift in Sources */,
 				B2BC64362716598200614783 /* WeatherVM.swift in Sources */,
 				B2BC642D27164A4E00614783 /* Endpoints.swift in Sources */,
 				B2BC641A271649BA00614783 /* LilWeatherApp.swift in Sources */,

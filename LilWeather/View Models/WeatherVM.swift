@@ -45,3 +45,4 @@ class WeatherModelImplementation: ObservableObject, WeatherViewModel {
 
 // https://api.lil.software/weather?latitude=40.709335&longitude=-73.956558
 // https://api.lil.software/weather?latitude=-73.956558&longitude=40.709335
+
