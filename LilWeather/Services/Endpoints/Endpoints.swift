@@ -6,6 +6,7 @@
 //
 
 import Foundation
+// https://api.lil.software/weather?latitude=40.709335&longitude=-73.956558
 
 /// This is used to ensure reusability. If we were working with multiple API endpoints, we would reuse this builder.
 protocol APIBuilder {
@@ -28,11 +29,11 @@ extension LittleAPI: APIBuilder {
             return URL(string: "https://api.lil.software")!
         }
     }
-    #error("Finish the weather one to function properly from the user input.")
+
     var path: String {
         switch self {
         case .getWeather :
-            return "/weather"
+            return "/weather?latitude=40.709335&longitude=-73.956558" // "/weather?latitude=\(double here)&longitude=\(double here)"
         case .news:
             return "/news"
         }
