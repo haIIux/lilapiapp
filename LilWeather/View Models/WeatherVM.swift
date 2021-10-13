@@ -28,7 +28,7 @@ class WeatherModelImplementation: ObservableObject, WeatherViewModel {
         self.state = .loading
         
         let cancellable = service
-            .request(from: .getWeather)
+            .request(from: .getWeather(long: "-73.956558", lat: "40.709335"))
             .sink { res in
                 switch res {
                 case .finished:
@@ -42,3 +42,6 @@ class WeatherModelImplementation: ObservableObject, WeatherViewModel {
         self.cancellables.insert(cancellable)
     }
 }
+
+// https://api.lil.software/weather?latitude=40.709335&longitude=-73.956558
+// https://api.lil.software/weather?latitude=-73.956558&longitude=40.709335
